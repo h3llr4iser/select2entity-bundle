@@ -36,6 +36,10 @@
         {% set attr = attr|merge({'data-width': width}) %}
     {% endif %}
 
+    {% if class %}
+        {% set attr = attr|merge({'data-class': class}) %}
+    {% endif %}
+
 
     {% spaceless %}
         <select {{ block('widget_attributes') }}>
