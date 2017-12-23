@@ -82,7 +82,7 @@ class AutocompleteService
 
 
 		$result['results'] = array_map(function ($item) use ($accessor, $fieldOptions) {
-			return ['id' => $accessor->getValue($item, $fieldOptions['primary_key']), 'text' => $fieldOptions['property'] == null ? $item : $accessor->getValue($item, $fieldOptions['property'])];
+			return ['id' => $accessor->getValue($item, $fieldOptions['primary_key']), 'text' => $fieldOptions['property'] == null ? $item->__toString() : $accessor->getValue($item, $fieldOptions['property'])];
 		}, $paginationResults);
 
 		return $result;
